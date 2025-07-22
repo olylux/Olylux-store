@@ -2,19 +2,65 @@
 <meta charset="UTF-8"><title>Product</title><link rel="stylesheet" href="css/style.css">
 </head><body>
 <header><h1>Olylux Fashion</h1><nav><a href="index.html">Home</a> | <a href="cart.html">Cart</a></nav></header>
-<section id="product-detail"></section>
+<div class="product-container" id="product-detail">
+  <!-- Product details will be loaded here -->
+</div>
+  <div class="tabs">
+  <div class="tab-buttons">
+    <button onclick="showTab('details')">Product Details</button>
+    <button onclick="showTab('shipping')">Shipping Info</button>
+    <button onclick="showTab('return')">Return Policy</button>
+    <button onclick="showTab('reviews')">Customer Reviews</button>
+  </div>
+  <div id="details" class="tab-content active">
+    <strong>Material:</strong> 100% Cotton<br>
+    <strong>Fit:</strong> Oversized<br>
+    <strong>Wash:</strong> Cold machine wash, gentle cycle
+  </div>
+  <div id="shipping" class="tab-content">
+    Free delivery within Nigeria. International shipping available in 5–10 business days.
+  </div>
+  <div id="return" class="tab-content">
+    Returns accepted within 7 days. Items must be unworn and tags attached.
+  </div>
+  <div id="reviews" class="tab-content">
+    <p>⭐⭐⭐⭐⭐ Great quality hoodie! – Aisha</p>
+    <p>⭐⭐⭐⭐ Fits perfectly. Will order again. – Tunde</p>
+  </div>
+</div>
 <script>
+  function showTab(id) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+
   async function loadProduct() {
     const params = new URLSearchParams(location.search);
     const res = await fetch('/api/products/' + params.get('id'));
     const p = await res.json();
     document.getElementById('product-detail').innerHTML = `
-      <h2>${p.name}</h2>
-      <p>${p.description}</p>
-      <strong>₦${p.price}</strong><br>
-      Size: <select>${p.sizes.map(s=>`<option>${s}</option>`).join('')}</select><br>
-      Color: <select>${p.colors.map(c=>`<option>${c}</option>`).join('')}</select><br>
-      <button>Add to Cart</button>`;
+      <div class="product-image">
+        <img src="${p.image}" alt="${p.name}" width="100%">
+      </div>
+      <div class="product-info">
+        <h2>${p.name}</h2>
+        <p>${p.description}</p>
+        <strong>₦${p.price}</strong><br><br>
+
+        <label>Size:</label>
+        <select>${p.sizes.map(s => `<option>${s}</option>`).join('')}</select>
+
+        <label>Color:</label>
+        <select>${p.colors.map(c => `<option>${c}</option>`).join('')}</select>
+
+        <label>Quantity:</label>
+        <input type="number" value="1" min="1">
+
+        <button style="margin-top: 10px;">Add to Cart</button>
+        <button style="margin-top: 10px; background:#28a745; color:white;">Buy Now</button>
+      </div>
+    `;
   }
+
   loadProduct();
-</script></body></html>
+</script>
