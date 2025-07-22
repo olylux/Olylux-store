@@ -285,28 +285,33 @@ body {
   margin: 0;
 }
 
-.slider-section {
-  width: 100%;
-  overflow: hidden;
-  margin-top: 20px;
-}
-
 .slider {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 400px;
+  overflow: hidden;
+  margin-bottom: 40px;
 }
 
 .slide {
-  position: absolute;
+  display: none;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  border-radius: 8px;
 }
 
 .slide.active {
-  opacity: 1;
+  display: block;
+  animation: fade 1s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
 }
