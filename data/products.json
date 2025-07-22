@@ -1,24 +1,38 @@
 [
-  {"id":1,"name":"Oversized Cotton Hoodie","price":8000,"sizes":["S","M","L"],"colors":["Black","Gray"],"description":"Soft cotton blend, perfect for casual wear."},
-  {"id":2,"name":"Slim Fit Jeans","price":10000,"sizes":["M","L","XL"],"colors":["Blue","Black"],"description":"Comfortable stretch denim."}
-]
-[
   {
     "id": 1,
-    "name": "Luxury Polo Shirt",
-    "price": 18000,
-    "image": "images/polo.jpg"
-  },
-  {
-    "id": 2,
-    "name": "Classic Hoodie",
-    "price": 22000,
+    "name": "Oversized Cotton Hoodie",
+    "price": 8000,
+    "sizes": ["S", "M", "L"],
+    "colors": ["Black", "Gray"],
+    "description": "Soft cotton blend, perfect for casual wear.",
     "image": "images/hoodie.jpg"
   },
   {
+    "id": 2,
+    "name": "Slim Fit Jeans",
+    "price": 10000,
+    "sizes": ["M", "L", "XL"],
+    "colors": ["Blue", "Black"],
+    "description": "Comfortable stretch denim.",
+    "image": "images/jeans.jpg"
+  },
+  {
     "id": 3,
+    "name": "Luxury Polo Shirt",
+    "price": 18000,
+    "description": "Premium cotton polo shirt with embroidered logo.",
+    "image": "images/polo.jpg",
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["White", "Navy"]
+  },
+  {
+    "id": 4,
     "name": "Olylux Tracksuit",
     "price": 28000,
-    "image": "images/tracksuit.jpg"
+    "description": "Two-piece set for comfort and style.",
+    "image": "images/tracksuit.jpg",
+    "sizes": ["M", "L", "XL"],
+    "colors": ["Black", "Green"]
   }
 ]
