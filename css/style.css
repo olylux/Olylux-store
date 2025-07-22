@@ -238,13 +238,12 @@ body {
 }
 
 .brand-title {
-  font-family: 'Poppins', sans-serif; /* already in your site */
-  font-weight: 800;
-  font-size: 36px;
-  letter-spacing: 2px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  font-weight: normal;
   text-transform: uppercase;
-  color: #f39c12; /* golden/yellow tone, you can change this */
+  letter-spacing: 3px;
+  color: #f39c12; /* Golden yellow */
   margin: 0;
   padding: 10px 0;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
