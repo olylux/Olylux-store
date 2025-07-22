@@ -13,3 +13,21 @@ async function loadProducts() {
   });
 }
 loadProducts();
+document.addEventListener('DOMContentLoaded', function () {
+  fetch('data/products.json')
+    .then(response => response.json())
+    .then(products => {
+      const productList = document.getElementById('product-list');
+      products.forEach(product => {
+        const div = document.createElement('div');
+        div.className = 'product-card';
+        div.innerHTML = `
+          <img src="${product.image}" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <p>₦${product.price}</p>
+          <button>Add to Cart</button>
+        `;
+        productList.appendChild(div);
+      });
+    });
+});
