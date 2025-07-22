@@ -284,3 +284,29 @@ body {
   letter-spacing: 2px;
   margin: 0;
 }
+
+.slider-section {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border-radius: 8px;
+}
+
+.slide.active {
+  opacity: 1;
+}
