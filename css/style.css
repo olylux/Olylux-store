@@ -268,3 +268,19 @@ body {
   margin: 0;
   padding: 10px 0;
 }
+
+.site-header {
+  background: linear-gradient(to right, #000000, #333333); /* Dark banner background */
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+.site-title {
+  font-size: 48px;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+  margin: 0;
+}
