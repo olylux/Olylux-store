@@ -87,3 +87,32 @@ nav {
   background-color: #333;
   border-radius: 5px;
 }
+.product-container { max-width: 900px; margin: auto; padding: 20px; }
+.product-image { float: left; width: 40%; }
+.product-image img { width: 100%; border-radius: 8px; }
+.product-info { float: right; width: 55%; }
+.product-info h2 { margin-top: 0; }
+.product-info select, .product-info input { width: 100%; padding: 8px; margin-bottom: 10px; }
+
+.tabs { margin-top: 20px; clear: both; }
+.tab-buttons button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.tab-buttons button:hover { background: #555; }
+
+.tab-content {
+  display: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.tab-content.active { display: block; }
