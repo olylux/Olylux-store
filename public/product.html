@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><title>Product</title><link rel="stylesheet" href="css/style.css">
+</head><body>
+<header><h1>Olylux Fashion</h1><nav><a href="index.html">Home</a> | <a href="cart.html">Cart</a></nav></header>
+<section id="product-detail"></section>
+<script>
+  async function loadProduct() {
+    const params = new URLSearchParams(location.search);
+    const res = await fetch('/api/products/' + params.get('id'));
+    const p = await res.json();
+    document.getElementById('product-detail').innerHTML = `
+      <h2>${p.name}</h2>
+      <p>${p.description}</p>
+      <strong>₦${p.price}</strong><br>
+      Size: <select>${p.sizes.map(s=>`<option>${s}</option>`).join('')}</select><br>
+      Color: <select>${p.colors.map(c=>`<option>${c}</option>`).join('')}</select><br>
+      <button>Add to Cart</button>`;
+  }
+  loadProduct();
+</script></body></html>
