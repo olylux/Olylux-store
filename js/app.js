@@ -38,8 +38,3 @@ setInterval(() => {
   currentSlide = (currentSlide + 1) % slides.length;
   showSlide(currentSlide);
 }, 4000); // change slide every 4 seconds
-
-function toggleMenu() {
-  const menu = document.querySelector('.nav-menu ul');
-  menu.classList.toggle('active');
-}
